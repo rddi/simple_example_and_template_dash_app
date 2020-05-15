@@ -10,7 +10,7 @@ def base_layout():
         - layout (dash_html_components.html.Div): The layout content
     """
     layout = html.Div(children=[
-        html.H1(children='Dash Tutorials'),
+        html.H1(children='Dash Simple dashboard example'),
         dcc.Graph(id='hist-example',
             figure={
                 'data': [
@@ -30,10 +30,7 @@ def base_layout():
     ])
     return layout
 
-def get_v2_layout():
+def get_other_view_layout():
     return html.Div([
-        html.Button('Button 1', id='btn-nclicks-1', n_clicks=0),
-        html.Button('Button 2', id='btn-nclicks-2', n_clicks=0),
-        html.Button('Button 3', id='btn-nclicks-3', n_clicks=0),
-        html.Div(id='container-button-timestamp')
+        html.H3('This is an alternative view')
     ])

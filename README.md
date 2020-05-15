@@ -16,6 +16,7 @@ Then you need to install and activate the right version of python with the
 following commands when you are in the root directory:
 
 `pyenv install $(cat .python-version)`
+
 `pyenv local $(cat .python-version)`
 
 You can now check that you are using the right version of python with the command:

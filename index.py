@@ -5,12 +5,12 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
 import controller
-from view.simple_example_layouts import base_layout, get_other_view_layout
+from view.polar_layouts import get_polar_layout, get_other_view_layout
+from view.header import get_navbar
 
 # setup_base_layout(app)
 app.layout = html.Div([
-    dcc.Link('Navigate to "/base"', href='/base'),
-    dcc.Link('Navigate to "/other_view"', href='/other_view'),
+    get_navbar(),
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
@@ -24,8 +24,8 @@ app.layout = html.Div([
                   State('page-content', 'children')
               ])
 def display_page(pathname, current_content):
-    if pathname == "/base":
-        return base_layout()
+    if pathname == "/polar":
+        return get_polar_layout()
     elif pathname == "/other_view":
         return get_other_view_layout()
     else:

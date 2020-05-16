@@ -10,6 +10,7 @@ dash = "*"
 pandas = "*"
 plotly = "*"
 sqlalchemy = "*"
+dash-bootstrap-components = "*"
 
 [requires]
 python_version = "3.6"

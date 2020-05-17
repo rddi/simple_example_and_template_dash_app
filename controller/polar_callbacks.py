@@ -1,16 +1,8 @@
-## Global imports 
 from dash.dependencies import Input, Output, State
 
-
-## Local imports
-#
 from app import app
 from model.location_model import get_location_data
 from view.polar_layouts import get_polar_plot_figure_from_x_y
-
-
-
-
 
 @app.callback(
     Output(component_id='polar-graph', component_property='figure'),
@@ -24,12 +16,10 @@ from view.polar_layouts import get_polar_plot_figure_from_x_y
     ]
 )
 def update_polar_layout(n_clicks, start_point, end_point, current_output_state):
-    """A simple example of a call bakc function. Update the histograme based on
-    the input recovered from the view with id input-on-submit and the data 
-    recover via the model function get_n_first_line_of_data.
+    """ Update the polar plot when the submit button is clicked.
 
     Args:
-        - n_clicks (int): The sumit button.
+        - n_clicks (int): The number of time the sumit button has been clicked.
         - start_point (int): The input of the view corresponding to first point
             index to display.
         - end_point (int): The input of the view corresponding to last point
@@ -37,7 +27,7 @@ def update_polar_layout(n_clicks, start_point, end_point, current_output_state):
         - current_output_state (dict): The current data in the figure.
 
     Returns:
-        - output (dict): The new data to display
+        - output (dict): The new data to display in figure.
     """
     if n_clicks == 0: # The clicks is call for the number zero
         output = current_output_state
@@ -45,3 +35,4 @@ def update_polar_layout(n_clicks, start_point, end_point, current_output_state):
         x, y = get_location_data(start_point, end_point)
         output = get_polar_plot_figure_from_x_y(x, y)
     return output
+

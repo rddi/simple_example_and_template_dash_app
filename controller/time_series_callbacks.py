@@ -1,15 +1,8 @@
-## Global imports 
 from dash.dependencies import Input, Output, State
 
-
-## Local imports
 from app import app
 from model.location_model import get_location_data
 from view.time_series_layouts import get_time_series_plot_figure_data
-
-
-
-
 
 @app.callback(
     [
@@ -26,22 +19,22 @@ from view.time_series_layouts import get_time_series_plot_figure_data
         State(component_id='time-series-graph-2', component_property='figure')
     ]
 )
-def update_polar_layout(n_clicks, start_point, end_point,
+def update_time_series_layout(n_clicks, start_point, end_point,
         current_output_1_state, current_output_2_state):
-    """A simple example of a call bakc function. Update the histograme based on
-    the input recovered from the view with id input-on-submit and the data 
-    recover via the model function get_n_first_line_of_data.
+    """ Update the two time series plot when the submit button is clicked.
 
     Args:
-        - n_clicks (int): The sumit button.
+        - n_clicks (int): The number of time the sumit button has been clicked.
         - start_point (int): The input of the view corresponding to first point
             index to display.
         - end_point (int): The input of the view corresponding to last point
             index to display.
-        - current_output_state (dict): The current data in the figure.
+        - current_output_1_state (dict): The current data in the figure 1.
+        - current_output_2_state (dict): The current data in the figure 2.
 
     Returns:
-        - output (dict): The new data to display
+        - output_1 (dict): The new data to display in figure 1.
+        - output_2 (dict): The new data to display in figure 2.
     """
     if n_clicks == 0: # The clicks is call for the number zero
         output_1 = current_output_1_state

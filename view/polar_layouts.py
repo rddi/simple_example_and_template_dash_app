@@ -4,6 +4,16 @@ import dash_html_components as html
 from app import app
 
 def get_polar_plot_figure_from_x_y(x, y):
+    """ Return the figure data in dictionnary based on the parameters.
+
+    Args:
+        - y (list): The y values of the data to display.
+        - x (list): The x values of the data to display. If the value is left
+                at None, the x will be [1, 2, ..., n].
+
+    Retruns:
+        - figure_data (dict): The data to use for the displayed figure.
+    """
     figure_data = {
         'data': [
             {
@@ -40,7 +50,3 @@ def get_polar_layout():
     ])
     return layout
 
-def get_other_view_layout():
-    return html.Div([
-        html.H3('This is an alternative view')
-    ])

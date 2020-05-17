@@ -1,4 +1,5 @@
 import dash
 
 app = dash.Dash()
-# app.config.suppress_callback_exceptions = True
+# To avoid displaying the alert raised by the callbacks and unfound ids.
+app.config.suppress_callback_exceptions = True

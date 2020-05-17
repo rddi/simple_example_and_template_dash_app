@@ -5,7 +5,8 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 
 import controller
-from view.polar_layouts import get_polar_layout, get_other_view_layout
+from view.polar_layouts import get_polar_layout
+from view.time_series_layouts import get_time_series_layout
 from view.header import get_navbar
 
 # setup_base_layout(app)
@@ -26,8 +27,8 @@ app.layout = html.Div([
 def display_page(pathname, current_content):
     if pathname == "/polar":
         return get_polar_layout()
-    elif pathname == "/other_view":
-        return get_other_view_layout()
+    elif pathname == "/timeseries":
+        return get_time_series_layout()
     else:
         return current_content
 

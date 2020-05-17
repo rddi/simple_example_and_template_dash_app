@@ -13,14 +13,14 @@ from view.polar_layouts import get_polar_plot_figure_from_x_y
 
 
 @app.callback(
-    Output(component_id='hist-example', component_property='figure'),
+    Output(component_id='polar-graph', component_property='figure'),
     [
-        Input(component_id='submit-button', component_property='n_clicks')
+        Input(component_id='submit-button-pol', component_property='n_clicks')
     ],
     [
-        State(component_id='start_point', component_property='value'),
-        State(component_id='end_point', component_property='value'),
-        State(component_id='hist-example', component_property='figure')
+        State(component_id='start-point-pol', component_property='value'),
+        State(component_id='end-point-pol', component_property='value'),
+        State(component_id='polar-graph', component_property='figure')
     ]
 )
 def update_polar_layout(n_clicks, start_point, end_point, current_output_state):

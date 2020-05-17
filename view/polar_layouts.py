@@ -32,11 +32,11 @@ def get_polar_layout():
     """
     layout = html.Div(children=[
         html.H1(children='Polar layout'),
-        dcc.Graph(id='hist-example',
+        dcc.Graph(id='polar-graph',
             figure=get_polar_plot_figure_from_x_y([], [])),
-        html.Div(dcc.Input(id='start_point', type='number', value=0)),
-        html.Div(dcc.Input(id='end_point', type='number', value=100)),
-        html.Button('Submit', id='submit-button', n_clicks=0),
+        html.Div(dcc.Input(id='start-point-pol', type='number', value=0)),
+        html.Div(dcc.Input(id='end-point-pol', type='number', value=100)),
+        html.Button('Submit', id='submit-button-pol', n_clicks=0),
     ])
     return layout
 

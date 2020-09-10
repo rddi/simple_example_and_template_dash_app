@@ -48,5 +48,4 @@ To launch the app, go in the root folder and use the command:
 `python index.py`
 
 The very simple dashboard is then available at the following url:
-`http://127.0.0.1:8050/base`, an other very simple page is also available at the
-url `http://127.0.0.1:8050/v2`
+`http://127.0.0.1:8050`.

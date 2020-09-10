@@ -8,11 +8,11 @@ def get_location_data(start_point, end_point):
         - end_point (int): the last line of the data to display.
 
     Returns:
-        - x (list): The list of names.
-        - y (list): The list of ages.
+        - x (list): The list of x coordinates.
+        - y (list): The list of y coordinates.
     """
     df = pd.read_csv('location.csv')
-    df = df[max(0, start_point):min(len(df), end_point)]
+    df = df[max(0, start_point) : min(len(df), end_point)]
     x = list(df['x'].values)
     y = list(df['y'].values)
     return x, y
